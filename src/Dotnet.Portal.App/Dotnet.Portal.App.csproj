@@ -17,12 +17,13 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
 
 
   <ItemGroup>
-    <ProjectReference Include="..\ChurchSystem.Data\Dotnet.Portal.Data.csproj" />
+    <ProjectReference Include="..\Dotnet.Portal.Data\Dotnet.Portal.Data.csproj" />
+    <ProjectReference Include="..\Dotnet.Portal.Domain\Dotnet.Portal.Domain.csproj" />
   </ItemGroup>
 
 </Project>

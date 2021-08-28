@@ -92,7 +92,7 @@ namespace Dotnet.Portal.App.ViewsModels
         public string PhoneNumber { get; set; }
 
         [DisplayName("Full-time employment?")]
-        public bool Baptized { get; set; }
+        public bool Baptized { get; set; } = true;
 
         [DisplayName("Member active?")]
         public bool Status { get; set; } = true;

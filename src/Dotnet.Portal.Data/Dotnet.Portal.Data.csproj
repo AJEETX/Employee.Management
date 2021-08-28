@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ChurchSystem.Business\Dotnet.Portal.Domain.csproj" />
+    <ProjectReference Include="..\Dotnet.Portal.Domain\Dotnet.Portal.Domain.csproj" />
   </ItemGroup>
 
 </Project>
