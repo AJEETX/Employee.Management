@@ -1,0 +1,22 @@
+﻿@model Dotnet.Portal.App.ViewsModels.DonationViewModel
+
+@{
+    ViewData["Title"] = "Donation details";
+}
+
+<h3 class="ui header">
+    <i class="money bill alternate outline icon"></i>
+    Donation details
+</h3>
+
+<div class="ui divider"></div>
+
+@{ await Html.RenderPartialAsync("_DonationDetailsPartial.cshtml"); }
+<a class="ui button" asp-action="Index">
+    <i class="arrow left icon"></i>
+    Back
+</a>
+<a class="ui primary button" asp-action="Edit" asp-route-id="@Model.Id">
+    <i class="pencil alternate icon"></i>
+    Edit
+</a>

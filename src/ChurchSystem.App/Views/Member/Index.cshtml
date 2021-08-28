@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Dotnet.Portal.App.ViewsModels.MemberViewModel>
+
+@{
+    ViewData["Title"] = "employees";
+}
+
+<a class="ui right floated small primary labeled icon button" asp-action="Create">
+    <i class="add icon"></i>
+    Add employee
+</a>
+
+<h3 class="ui header">employees</h3>
+
+<table class="ui blue single line selectable table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Neighborhood)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Neighborhood)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td class="right aligned">
+                    <a asp-action="Edit" class="ui button icon" asp-route-id="@item.Id"><i class="pencil alternate icon"></i></a>
+                    <a asp-action="Details" class="ui button icon" asp-route-id="@item.Id"><i class="search icon"></i></a>
+                    <a asp-action="Delete" class="ui button icon" asp-route-id="@item.Id"><i class="trash alternate outline icon"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

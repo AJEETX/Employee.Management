@@ -1,0 +1,20 @@
+﻿@model Dotnet.Portal.App.ViewsModels.RoleViewModel
+
+@{
+    ViewData["Title"] = "Role details";
+}
+
+<h3 class="ui header">Role details</h3>
+
+<div class="ui divider"></div>
+
+@{ await Html.RenderPartialAsync("_RoleDetailsPartial.cshtml"); }
+
+<a class="ui button" asp-action="Index">
+    <i class="arrow left icon"></i>
+    Back
+</a>
+<a class="ui primary button" asp-action="Edit" asp-route-id="@Model.Id">
+    <i class="pencil alternate icon"></i>
+    Edit
+</a>

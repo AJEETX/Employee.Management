@@ -1,0 +1,19 @@
+﻿@model Dotnet.Portal.App.ViewsModels.MemberViewModel
+
+@{
+    ViewData["Title"] = "employee details";
+}
+
+<h3 class="ui header">employee details</h3>
+
+<div class="ui divider"></div>
+
+@{ await Html.RenderPartialAsync("_MemberDetailsPartial.cshtml"); }
+<a class="ui button" asp-action="Index">
+    <i class="arrow left icon"></i>
+    Back
+</a>
+<a class="ui primary button" asp-action="Edit" asp-route-id="@Model.Id">
+    <i class="pencil alternate icon"></i>
+    Edit
+</a>
