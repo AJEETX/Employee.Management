@@ -31,8 +31,14 @@ namespace Dotnet.Portal.App.Controllers
         // GET: Donation
         public IActionResult Index()
         {
-            var teste = _donationRepository.GetDonations();
-            return View(_mapper.Map<IEnumerable<DonationViewModel>>(teste));
+            var donations = _donationRepository.GetDonations();
+            var donationsVM = new List<DonationViewModel>();
+            foreach (var donation in donations)
+            {
+                donationsVM.Add(new DonationViewModel(donation));
+            }
+            //donationsVM = _mapper.Map<IEnumerable<DonationViewModel>>(donations);
+            return View(donationsVM);
         }
 
         // GET: Donation/Details/5
@@ -44,6 +50,7 @@ namespace Dotnet.Portal.App.Controllers
                 return NotFound();
 
             DonationVM = new DonationViewModel(donation);
+            InitializeDonation();
             return View(DonationVM);
         }
 
@@ -67,7 +74,7 @@ namespace Dotnet.Portal.App.Controllers
                 Amount = donationViewModel.Amount,
                 Type = (DonationType)donationViewModel.DonationType,
                 Date = donationViewModel.Date,
-                Member = await _memberRepository.GetMember(donationViewModel.MemberId),
+                //Member = await _memberRepository.GetMember(donationViewModel.MemberId),
                 MemberId = donationViewModel.MemberId
             };
 
@@ -114,7 +121,7 @@ namespace Dotnet.Portal.App.Controllers
             donation.Date = donationViewModel.Date;
             donation.Member = await _memberRepository.GetMember(donationViewModel.MemberId);
             donation.MemberId = donationViewModel.MemberId;
-            donation.Type = (DonationType)donationViewModel.Type;
+            donation.Type = (DonationType)donationViewModel.DonationType;
 
             try
             {

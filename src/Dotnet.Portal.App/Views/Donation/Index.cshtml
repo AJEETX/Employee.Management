@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Dotnet.Portal.App.ViewsModels.DonationViewModel>
 
 @{
-    ViewData["Title"] = "Donations";
+    ViewData["Title"] = "Payments";
 }
 
 <a class="ui right floated small primary labeled icon button" asp-action="Create">
@@ -9,7 +9,7 @@
     Register new
 </a>
 
-<h3 class="ui header">Donations</h3>
+<h3 class="ui header">Payments</h3>
 
 <table class="ui blue single line selectable table">
     <thead>
@@ -39,7 +39,7 @@
                     @Html.DisplayFor(modelItem => item.Amount)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Type)
+                    @Html.DisplayFor(modelItem => item.DonationType)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Member.Name)
