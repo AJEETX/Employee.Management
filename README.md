@@ -1,5 +1,5 @@
-# Church Management System
-Web application for human resources management in a religious institution, written in C# on an ASP.NET Core MVC 3.1 project. It will manage basic information such as members, roles, donations, schedules, among others.
+# Employee Management System
+Web application for human resources management in an institution, written in C# on an ASP.NET Core MVC 3.1 project. It will manage basic information such as employees, roles, payments, schedules, among others.
 
 > *The project aims to be used for studies and teaching object-oriented programming, serving as a model for the implementation of systems with layered architecture, using the model-view-controller pattern.*
 
@@ -19,7 +19,7 @@ Web application for human resources management in a religious institution, writt
 * **Data:** Context, Mappings, Migrations, Repository
 
 
-### This project is under the MIT license. Consult the <a href="https://github.com/vctr-moraes/ChurchSystem/blob/master/LICENSE" target="_blank">LICENSE</a> for more information.
+### This project is under the MIT license. Consult the <a href="https://github.com/AJEETX/Employee.Management/blob/master/LICENSE" target="_blank">LICENSE</a> for more information.
 
 <br>
 
