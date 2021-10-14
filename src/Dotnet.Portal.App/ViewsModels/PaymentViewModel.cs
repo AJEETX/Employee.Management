@@ -6,16 +6,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dotnet.Portal.App.ViewsModels
 {
-    public class DonationViewModel
+    public class PaymentViewModel
     {
-        public DonationViewModel() { }
+        public PaymentViewModel() { }
 
-        public DonationViewModel(Donation donation)
+        public PaymentViewModel(Payment donation)
         {
             Id = donation.Id;
             Date = donation.Date;
             Amount = donation.Amount;
-            DonationType = (DonationTypeViewModel)donation.Type;
+            DonationType = (PaymentTypeViewModel)donation.Type;
             MemberId = donation.MemberId;
             Member = new MemberViewModel(donation.Member);
         }
@@ -39,7 +39,7 @@ namespace Dotnet.Portal.App.ViewsModels
 
         [Display(Name = "Type")]
         [Required(ErrorMessage = "The {0} field is required.")]
-        public DonationTypeViewModel DonationType { get; set; }
+        public PaymentTypeViewModel DonationType { get; set; }
 
         [Display(Name = "Member")]
         [Required(ErrorMessage = "The {0} field is required.")]

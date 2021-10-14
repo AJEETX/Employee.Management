@@ -9,18 +9,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Dotnet.Portal.Data.Repository
 {
-    public class DonationRepository : Repository<Donation>, IDonationRepository
+    public class DonationRepository : Repository<Payment>, IDonationRepository
     {
         public DonationRepository(DotnetPortalDB context) : base(context) { }
 
-        public async Task<Donation> GetDonation(Guid id)
+        public async Task<Payment> GetDonation(Guid id)
         {
             return await Db.Donations.AsNoTracking()
                 .Include(d => d.Member)
                 .FirstOrDefaultAsync(d => d.Id == id);
         }
 
-        public List<Donation> GetDonations()
+        public List<Payment> GetDonations()
         {
             return Db.Donations.Include(d=>d.Member).ToList();
         }

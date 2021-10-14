@@ -2,7 +2,7 @@
 
 namespace Dotnet.Portal.App.ViewsModels
 {
-    public enum DonationTypeViewModel
+    public enum PaymentTypeViewModel
     {
         [Display(Name = "Donation")]
         Donation = 1,

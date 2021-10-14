@@ -1,4 +1,4 @@
-﻿@model Dotnet.Portal.App.ViewsModels.DonationViewModel
+﻿@model Dotnet.Portal.App.ViewsModels.PaymentViewModel
 
 @{
     ViewData["Title"] = "Payment details";
@@ -11,7 +11,7 @@
 
 <div class="ui divider"></div>
 
-@{ await Html.RenderPartialAsync("_DonationDetailsPartial.cshtml"); }
+@{ await Html.RenderPartialAsync("_PaymentDetailsPartial.cshtml"); }
 <a class="ui button" asp-action="Index">
     <i class="arrow left icon"></i>
     Back

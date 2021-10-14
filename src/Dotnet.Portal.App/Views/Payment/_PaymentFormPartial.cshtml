@@ -1,4 +1,4 @@
-﻿@model Dotnet.Portal.App.ViewsModels.DonationViewModel
+﻿@model Dotnet.Portal.App.ViewsModels.PaymentViewModel
 @using Dotnet.Portal.App.ViewsModels 
 
 <div class="field">
@@ -21,7 +21,7 @@
     <div class="two fields">
         <div class="field">
             <label asp-for="DonationType" class=""></label>
-            <select asp-for="DonationType" class="ui selection dropdown" asp-items="Html.GetEnumSelectList<DonationTypeViewModel>()">
+            <select asp-for="DonationType" class="ui selection dropdown" asp-items="Html.GetEnumSelectList<PaymentTypeViewModel>()">
                 <option value="" selected disabled>Select</option>
             </select>
             <span asp-validation-for="DonationType" class="text-danger"></span>

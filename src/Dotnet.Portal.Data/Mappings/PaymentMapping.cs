@@ -4,9 +4,9 @@ using Dotnet.Portal.Domain.Models;
 
 namespace Dotnet.Portal.Data.Mappings
 {
-    public class DonationMapping : IEntityTypeConfiguration<Donation>
+    public class DonationMapping : IEntityTypeConfiguration<Payment>
     {
-        public void Configure(EntityTypeBuilder<Donation> builder)
+        public void Configure(EntityTypeBuilder<Payment> builder)
         {
             builder
                 .HasKey(d => d.Id);

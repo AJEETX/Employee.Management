@@ -7,7 +7,7 @@ namespace Dotnet.Portal.Data.Context
     {
         public DotnetPortalDB(DbContextOptions options) : base(options) { }
 
-        public DbSet<Donation> Donations { get; set; }
+        public DbSet<Payment> Donations { get; set; }
         public DbSet<Group> Groups { get; set; }
         public DbSet<Member> Members { get; set; }
         public DbSet<Role> ListRoles { get; set; }

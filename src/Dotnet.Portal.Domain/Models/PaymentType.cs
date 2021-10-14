@@ -1,6 +1,6 @@
 ﻿namespace Dotnet.Portal.Domain.Models
 {
-    public enum DonationType
+    public enum PaymentType
     {
         Dizimo = 1,
         Doacao = 2

@@ -11,31 +11,31 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Dotnet.Portal.App.Controllers
 {
-    public class DonationController : Controller
+    public class PaymentController : Controller
     {
         private readonly IDonationRepository _donationRepository;
         private readonly IMemberRepository _memberRepository;
         private readonly IMapper _mapper;
 
-        public DonationController(IDonationRepository donationRepository, IMemberRepository memberRepository, IMapper mapper)
+        public PaymentController(IDonationRepository donationRepository, IMemberRepository memberRepository, IMapper mapper)
         {
             _donationRepository = donationRepository;
             _memberRepository = memberRepository;
             _mapper = mapper;
-            DonationVM = new DonationViewModel();
+            DonationVM = new PaymentViewModel();
         }
 
         [BindProperty]
-        public DonationViewModel DonationVM { get; set; }
+        public PaymentViewModel DonationVM { get; set; }
 
         // GET: Donation
         public IActionResult Index()
         {
             var donations = _donationRepository.GetDonations();
-            var donationsVM = new List<DonationViewModel>();
+            var donationsVM = new List<PaymentViewModel>();
             foreach (var donation in donations)
             {
-                donationsVM.Add(new DonationViewModel(donation));
+                donationsVM.Add(new PaymentViewModel(donation));
             }
             //donationsVM = _mapper.Map<IEnumerable<DonationViewModel>>(donations);
             return View(donationsVM);
@@ -44,12 +44,12 @@ namespace Dotnet.Portal.App.Controllers
         // GET: Donation/Details/5
         public async Task<IActionResult> Details(Guid id)
         {
-            Donation donation = await _donationRepository.GetDonation(id);
+            Payment donation = await _donationRepository.GetDonation(id);
 
             if (donation == null)
                 return NotFound();
 
-            DonationVM = new DonationViewModel(donation);
+            DonationVM = new PaymentViewModel(donation);
             InitializeDonation();
             return View(DonationVM);
         }
@@ -64,15 +64,15 @@ namespace Dotnet.Portal.App.Controllers
         // POST: Donation/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(DonationViewModel donationViewModel)
+        public async Task<IActionResult> Create(PaymentViewModel donationViewModel)
         {
             if (!ModelState.IsValid)
                 return View(donationViewModel);
 
-            Donation donation = new Donation
+            Payment donation = new Payment
             {
                 Amount = donationViewModel.Amount,
-                Type = (DonationType)donationViewModel.DonationType,
+                Type = (PaymentType)donationViewModel.DonationType,
                 Date = donationViewModel.Date,
                 //Member = await _memberRepository.GetMember(donationViewModel.MemberId),
                 MemberId = donationViewModel.MemberId
@@ -94,12 +94,12 @@ namespace Dotnet.Portal.App.Controllers
         // GET: Donation/Edit/5
         public async Task<IActionResult> Edit(Guid id)
         {
-            Donation donation = await _donationRepository.GetDonation(id);
+            Payment donation = await _donationRepository.GetDonation(id);
 
             if (donation == null)
                 return NotFound();
 
-            DonationVM = new DonationViewModel(donation);
+            DonationVM = new PaymentViewModel(donation);
             InitializeDonation();
             return View(DonationVM);
         }
@@ -107,7 +107,7 @@ namespace Dotnet.Portal.App.Controllers
         // POST: Donation/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, DonationViewModel donationViewModel)
+        public async Task<IActionResult> Edit(Guid id, PaymentViewModel donationViewModel)
         {
             if (id != donationViewModel.Id)
                 return NotFound();
@@ -115,13 +115,13 @@ namespace Dotnet.Portal.App.Controllers
             if (!ModelState.IsValid)
                 return View(donationViewModel);
 
-            Donation donation = await _donationRepository.GetDonation(id);
+            Payment donation = await _donationRepository.GetDonation(id);
 
             donation.Amount = donationViewModel.Amount;
             donation.Date = donationViewModel.Date;
             donation.Member = await _memberRepository.GetMember(donationViewModel.MemberId);
             donation.MemberId = donationViewModel.MemberId;
-            donation.Type = (DonationType)donationViewModel.DonationType;
+            donation.Type = (PaymentType)donationViewModel.DonationType;
 
             try
             {
@@ -140,12 +140,12 @@ namespace Dotnet.Portal.App.Controllers
         // GET: Donation/Delete/5
         public async Task<IActionResult> Delete(Guid id)
         {
-            Donation donation = await _donationRepository.GetDonation(id);
+            Payment donation = await _donationRepository.GetDonation(id);
 
             if (donation == null)
                 return NotFound();
 
-            DonationVM = new DonationViewModel(donation);
+            DonationVM = new PaymentViewModel(donation);
             return View(DonationVM);
         }
 
@@ -154,7 +154,7 @@ namespace Dotnet.Portal.App.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            Donation donation = await _donationRepository.GetDonation(id);
+            Payment donation = await _donationRepository.GetDonation(id);
 
             if (donation == null)
                 return NotFound();
@@ -168,7 +168,7 @@ namespace Dotnet.Portal.App.Controllers
             catch (Exception ex)
             {
                 ModelState.AddModelError(string.Empty, ex.Message);
-                DonationVM = new DonationViewModel(donation);
+                DonationVM = new PaymentViewModel(donation);
                 return View(DonationVM);
             }
         }

@@ -1,27 +1,30 @@
-﻿@model Dotnet.Portal.App.ViewsModels.DonationViewModel
+﻿@model Dotnet.Portal.App.ViewsModels.PaymentViewModel
 
 @{
-    ViewData["Title"] = "Edit payment";
+    ViewData["Title"] = "Create payment";
 }
 
-<h3 class="ui header">Edit payment</h3>
+<h3 class="ui header">Create payment</h3>
 
 <div class="ui divider"></div>
 <partial name="/Views/Components/_ValidationSummary.cshtml" />
 
-<form asp-action="Edit" class="ui form segment">
-    @{ await Html.RenderPartialAsync("_DonationFormPartial.cshtml"); }
-    <input type="hidden" asp-for="Id" />
+<form asp-action="Create" class="ui form segment">
+    @{ await Html.RenderPartialAsync("_PaymentFormPartial.cshtml"); }
     <a class="ui button" asp-action="Index">
         <i class="arrow left icon"></i>
         Back
     </a>
     <button type="submit" class="ui submit primary button">
         <i class="check icon"></i>
-        Save
+        Create
     </button>
 </form>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        $('select.dropdown').dropdown();
+    </script>
 }
