@@ -52,7 +52,7 @@ namespace Dotnet.Portal.App.ViewsModels
         [StringLength(200, ErrorMessage = "The {0} field must be between {2} and {1} characters.", MinimumLength = 2)]
         public string Name { get; set; }
 
-        [DisplayName("Comments")]
+        [DisplayName("Remarks")]
         [StringLength(100, ErrorMessage = "The {0} field must be between {2} and {1} characters.", MinimumLength = 2)]
         public string Document { get; set; }
 
@@ -64,7 +64,7 @@ namespace Dotnet.Portal.App.ViewsModels
         [StringLength(200, ErrorMessage = "The {0} field must be between {2} and {1} characters.", MinimumLength = 2)]
         public string Address { get; set; }
 
-        [DisplayName("Skills")]
+        [DisplayName("Skill-set")]
         [StringLength(100, ErrorMessage = "The {0} field must be between {2} and {1} characters.", MinimumLength = 2)]
         public string Neighborhood { get; set; }
 
@@ -76,7 +76,7 @@ namespace Dotnet.Portal.App.ViewsModels
         [StringLength(50, ErrorMessage = "The {0} field must be between {2} and {1} characters.", MinimumLength = 2)]
         public string State { get; set; }
 
-        [DisplayName("Mailbox")]
+        [DisplayName("Other details")]
         [StringLength(15, ErrorMessage = "The {0} field must be between {2} and {1} characters.", MinimumLength = 8)]
         public string Mailbox { get; set; }
 
@@ -94,7 +94,7 @@ namespace Dotnet.Portal.App.ViewsModels
         [DisplayName("Full-time employment?")]
         public bool Baptized { get; set; } = true;
 
-        [DisplayName("Member active?")]
+        [DisplayName("Currently employed?")]
         public bool Status { get; set; } = true;
 
         [ScaffoldColumn(false)]
@@ -119,10 +119,10 @@ namespace Dotnet.Portal.App.ViewsModels
 
         #region Roles
 
-        [Display(Name = "Designations")]
+        [Display(Name = "Roles")]
         public Guid RoleId { get; set; }
 
-        [Display(Name = "Designations")]
+        [Display(Name = "Roles")]
         public Guid[] RolesIds { get; set; }
 
         public RoleViewModel Role { get; set; }

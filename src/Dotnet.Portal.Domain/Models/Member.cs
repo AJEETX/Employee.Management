@@ -21,7 +21,7 @@ namespace Dotnet.Portal.Domain.Models
         public DateTime RegistrationDate { get; set; }
 
         /* EF Relations */
-        public IEnumerable<Donation> Donations { get; set; }
+        public IEnumerable<Payment> Donations { get; set; }
         private readonly List<MemberGroup> _memberGroups = new List<MemberGroup>();
         private readonly List<MemberRole> _memberRoles = new List<MemberRole>();
 
