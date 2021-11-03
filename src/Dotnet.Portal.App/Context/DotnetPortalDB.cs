@@ -9,10 +9,10 @@ namespace Dotnet.Portal.Data.Context
 
         public DbSet<Payment> Donations { get; set; }
         public DbSet<Group> Groups { get; set; }
-        public DbSet<Member> Members { get; set; }
+        public DbSet<Employee> Members { get; set; }
         public DbSet<Role> ListRoles { get; set; }
-        public DbSet<MemberGroup> MemberGroups { get; set; }
-        public DbSet<MemberRole> MemberRoles { get; set; }
+        public DbSet<EmployeeGroup> MemberGroups { get; set; }
+        public DbSet<EmployeeRole> MemberRoles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

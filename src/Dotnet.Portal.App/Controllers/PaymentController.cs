@@ -13,11 +13,11 @@ namespace Dotnet.Portal.App.Controllers
 {
     public class PaymentController : Controller
     {
-        private readonly IDonationRepository _donationRepository;
+        private readonly IPaymentRepository _donationRepository;
         private readonly IMemberRepository _memberRepository;
         private readonly IMapper _mapper;
 
-        public PaymentController(IDonationRepository donationRepository, IMemberRepository memberRepository, IMapper mapper)
+        public PaymentController(IPaymentRepository donationRepository, IMemberRepository memberRepository, IMapper mapper)
         {
             _donationRepository = donationRepository;
             _memberRepository = memberRepository;
@@ -72,7 +72,7 @@ namespace Dotnet.Portal.App.Controllers
             Payment donation = new Payment
             {
                 Amount = donationViewModel.Amount,
-                Type = (PaymentType)donationViewModel.DonationType,
+                Type = (PaymentType)donationViewModel.PaymentType,
                 Date = donationViewModel.Date,
                 //Member = await _memberRepository.GetMember(donationViewModel.MemberId),
                 MemberId = donationViewModel.MemberId
@@ -121,7 +121,7 @@ namespace Dotnet.Portal.App.Controllers
             donation.Date = donationViewModel.Date;
             donation.Member = await _memberRepository.GetMember(donationViewModel.MemberId);
             donation.MemberId = donationViewModel.MemberId;
-            donation.Type = (PaymentType)donationViewModel.DonationType;
+            donation.Type = (PaymentType)donationViewModel.PaymentType;
 
             try
             {

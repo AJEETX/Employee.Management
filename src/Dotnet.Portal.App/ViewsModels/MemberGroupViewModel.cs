@@ -7,7 +7,7 @@ namespace Dotnet.Portal.App.ViewsModels
     {
         public MemberGroupViewModel() { }
 
-        public MemberGroupViewModel(MemberGroup memberGroup)
+        public MemberGroupViewModel(EmployeeGroup memberGroup)
         {
             Id = memberGroup.Id;
             MemberId = memberGroup.MemberId;

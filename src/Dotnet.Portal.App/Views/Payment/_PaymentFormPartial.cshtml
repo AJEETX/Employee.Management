@@ -20,11 +20,11 @@
 <div class="field">
     <div class="two fields">
         <div class="field">
-            <label asp-for="DonationType" class=""></label>
-            <select asp-for="DonationType" class="ui selection dropdown" asp-items="Html.GetEnumSelectList<PaymentTypeViewModel>()">
+            <label asp-for="PaymentType" class=""></label>
+            <select asp-for="PaymentType" class="ui selection dropdown" asp-items="Html.GetEnumSelectList<PaymentTypeViewModel>()">
                 <option value="" selected disabled>Select</option>
             </select>
-            <span asp-validation-for="DonationType" class="text-danger"></span>
+            <span asp-validation-for="PaymentType" class="text-danger"></span>
         </div>
         <div class="field">
             <label asp-for="Amount" class=""></label>

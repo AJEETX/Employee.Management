@@ -20,10 +20,4 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
 
-
-  <ItemGroup>
-    <ProjectReference Include="..\Dotnet.Portal.Data\Dotnet.Portal.Data.csproj" />
-    <ProjectReference Include="..\Dotnet.Portal.Domain\Dotnet.Portal.Domain.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -7,7 +7,7 @@ namespace Dotnet.Portal.App.ViewsModels
     {
         public MemberRoleViewModel() { }
 
-        public MemberRoleViewModel(MemberRole memberRole)
+        public MemberRoleViewModel(EmployeeRole memberRole)
         {
             Id = memberRole.Id;
             MemberId = memberRole.MemberId;

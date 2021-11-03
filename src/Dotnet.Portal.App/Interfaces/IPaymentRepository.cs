@@ -5,7 +5,7 @@ using Dotnet.Portal.Domain.Models;
 
 namespace Dotnet.Portal.Domain.Interfaces
 {
-    public interface IDonationRepository : IRepository<Payment>
+    public interface IPaymentRepository : IRepository<Payment>
     {
         Task<Payment> GetDonation(Guid id);
         List<Payment> GetDonations();

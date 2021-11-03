@@ -11,14 +11,14 @@ using Dotnet.Portal.Domain.Models;
 
 namespace Dotnet.Portal.App.Controllers
 {
-    public class MemberController : BaseController
+    public class EmployeeController : BaseController
     {
         private readonly IMemberRepository _memberRepository;
         private readonly IGroupRepository _groupRepository;
         private readonly IRoleRepository _roleRepository;
         private readonly IMapper _mapper;
 
-        public MemberController(IMemberRepository memberRepository,
+        public EmployeeController(IMemberRepository memberRepository,
                                 IGroupRepository groupRepository,
                                 IRoleRepository roleRepository,
                                 IMapper mapper)
@@ -47,7 +47,7 @@ namespace Dotnet.Portal.App.Controllers
         // GET: Member/Details/5
         public async Task<IActionResult> Details(Guid id)
         {
-            Member member = await _memberRepository.GetMember(id);
+            Employee member = await _memberRepository.GetMember(id);
 
             if (member == null)
                 return NotFound();
@@ -71,7 +71,7 @@ namespace Dotnet.Portal.App.Controllers
             if (!ModelState.IsValid)
                 return View(memberViewModel);
 
-            Member member = new Member
+            Employee member = new Employee
             {
                 Name = memberViewModel.Name,
                 Document = memberViewModel.Document,
@@ -114,7 +114,7 @@ namespace Dotnet.Portal.App.Controllers
         // GET: Member/Edit/5
         public async Task<IActionResult> Edit(Guid id)
         {
-            Member member = await _memberRepository.GetMember(id);
+            Employee member = await _memberRepository.GetMember(id);
 
             if (member == null)
                 return NotFound();
@@ -135,7 +135,7 @@ namespace Dotnet.Portal.App.Controllers
             if (!ModelState.IsValid)
                 return View(memberViewModel);
 
-            Member member = await _memberRepository.GetMember(id);
+            Employee member = await _memberRepository.GetMember(id);
 
             member.Name = memberViewModel.Name;
             member.Document = memberViewModel.Document;
@@ -178,7 +178,7 @@ namespace Dotnet.Portal.App.Controllers
         // GET: Member/Delete/5
         public async Task<IActionResult> Delete(Guid id)
         {
-            Member member = await _memberRepository.GetMember(id);
+            Employee member = await _memberRepository.GetMember(id);
 
             if (member == null)
                 return NotFound();
@@ -192,7 +192,7 @@ namespace Dotnet.Portal.App.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            Member member = await _memberRepository.GetMember(id);
+            Employee member = await _memberRepository.GetMember(id);
 
             if (member == null)
                 return NotFound();
