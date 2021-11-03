@@ -12,7 +12,7 @@ namespace Dotnet.Portal.App.ViewsModels
     {
         public MemberViewModel() { }
 
-        public MemberViewModel(Member member)
+        public MemberViewModel(Employee member)
         {
             Id = member.Id;
             Name = member.Name;

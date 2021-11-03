@@ -8,6 +8,6 @@ namespace Dotnet.Portal.Domain.Models
         public string Description { get; set; }
 
         /* EF Relations */
-        public IEnumerable<MemberGroup> Members { get; set; }
+        public IEnumerable<EmployeeGroup> Members { get; set; }
     }
 }

@@ -10,14 +10,14 @@ namespace Dotnet.Portal.App.ViewsModels
     {
         public PaymentViewModel() { }
 
-        public PaymentViewModel(Payment donation)
+        public PaymentViewModel(Payment payment)
         {
-            Id = donation.Id;
-            Date = donation.Date;
-            Amount = donation.Amount;
-            DonationType = (PaymentTypeViewModel)donation.Type;
-            MemberId = donation.MemberId;
-            Member = new MemberViewModel(donation.Member);
+            Id = payment.Id;
+            Date = payment.Date;
+            Amount = payment.Amount;
+            PaymentType = (PaymentTypeViewModel)payment.Type;
+            MemberId = payment.MemberId;
+            Member = new MemberViewModel(payment.Member);
         }
 
         [Key]
@@ -39,7 +39,7 @@ namespace Dotnet.Portal.App.ViewsModels
 
         [Display(Name = "Type")]
         [Required(ErrorMessage = "The {0} field is required.")]
-        public PaymentTypeViewModel DonationType { get; set; }
+        public PaymentTypeViewModel PaymentType { get; set; }
 
         [Display(Name = "Member")]
         [Required(ErrorMessage = "The {0} field is required.")]

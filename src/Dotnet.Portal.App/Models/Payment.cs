@@ -10,6 +10,6 @@ namespace Dotnet.Portal.Domain.Models
         public Guid MemberId { get; set; }
 
         /* EF Relations */
-        public Member Member { get; set; }
+        public Employee Member { get; set; }
     }
 }

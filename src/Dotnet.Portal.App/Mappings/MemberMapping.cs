@@ -4,9 +4,9 @@ using Dotnet.Portal.Domain.Models;
 
 namespace Dotnet.Portal.Data.Mappings
 {
-    public class MemberMapping : IEntityTypeConfiguration<Member>
+    public class MemberMapping : IEntityTypeConfiguration<Employee>
     {
-        public void Configure(EntityTypeBuilder<Member> builder)
+        public void Configure(EntityTypeBuilder<Employee> builder)
         {
             builder
                 .HasKey(m => m.Id);

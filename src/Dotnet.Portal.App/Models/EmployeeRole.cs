@@ -2,11 +2,11 @@
 
 namespace Dotnet.Portal.Domain.Models
 {
-    public class MemberRole : Entity
+    public class EmployeeRole : Entity
     {
-        public MemberRole() { }
+        public EmployeeRole() { }
 
-        public MemberRole(Role role, Member member)
+        public EmployeeRole(Role role, Employee member)
         {
             Role = role;
             RoleId = role.Id;
@@ -18,7 +18,7 @@ namespace Dotnet.Portal.Domain.Models
         public Guid RoleId { get; set; }
 
         /* EF Relations */
-        public Member Member { get; set; }
+        public Employee Member { get; set; }
         public Role Role { get; set; }
     }
 }

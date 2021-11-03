@@ -9,12 +9,12 @@ using Dotnet.Portal.Domain.Models;
 
 namespace Dotnet.Portal.App.Controllers
 {
-    public class GroupController : Controller
+    public class DepartmentsController : Controller
     {
         private readonly IGroupRepository _groupRepository;
         private readonly IMapper _mapper;
 
-        public GroupController(IGroupRepository groupRepository, IMapper mapper)
+        public DepartmentsController(IGroupRepository groupRepository, IMapper mapper)
         {
             _groupRepository = groupRepository;
             _mapper = mapper;

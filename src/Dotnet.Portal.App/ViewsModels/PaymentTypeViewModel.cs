@@ -4,10 +4,10 @@ namespace Dotnet.Portal.App.ViewsModels
 {
     public enum PaymentTypeViewModel
     {
-        [Display(Name = "Donation")]
-        Donation = 1,
+        [Display(Name = "Salary")]
+        Salary = 1,
 
-        [Display(Name = "Tithing")]
-        Tithing = 2
+        [Display(Name = "Allowance")]
+        Allowance = 2
     }
 }
