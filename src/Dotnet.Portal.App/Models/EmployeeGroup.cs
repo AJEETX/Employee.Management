@@ -2,11 +2,11 @@
 
 namespace Dotnet.Portal.Domain.Models
 {
-    public class MemberGroup : Entity
+    public class EmployeeGroup : Entity
     {
-        public MemberGroup() { }
+        public EmployeeGroup() { }
 
-        public MemberGroup(Group group, Member member)
+        public EmployeeGroup(Group group, Employee member)
         {
             Group = group;
             GroupId = group.Id;
@@ -18,7 +18,7 @@ namespace Dotnet.Portal.Domain.Models
         public Guid GroupId { get; set; }
 
         /* EF Relations */
-        public Member Member { get; set; }
+        public Employee Member { get; set; }
         public Group Group { get; set; }
     }
 }

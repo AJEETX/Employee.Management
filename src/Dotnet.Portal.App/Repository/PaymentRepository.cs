@@ -9,9 +9,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Dotnet.Portal.Data.Repository
 {
-    public class DonationRepository : Repository<Payment>, IDonationRepository
+    public class PaymentRepository : Repository<Payment>, IPaymentRepository
     {
-        public DonationRepository(DotnetPortalDB context) : base(context) { }
+        public PaymentRepository(DotnetPortalDB context) : base(context) { }
 
         public async Task<Payment> GetDonation(Guid id)
         {

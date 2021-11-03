@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Dotnet.Portal.Domain.Models
 {
-    public class Member : Entity
+    public class Employee : Entity
     {
         public string Name { get; set; }
         public string Document { get; set; }
@@ -22,14 +22,14 @@ namespace Dotnet.Portal.Domain.Models
 
         /* EF Relations */
         public IEnumerable<Payment> Donations { get; set; }
-        private readonly List<MemberGroup> _memberGroups = new List<MemberGroup>();
-        private readonly List<MemberRole> _memberRoles = new List<MemberRole>();
+        private readonly List<EmployeeGroup> _memberGroups = new List<EmployeeGroup>();
+        private readonly List<EmployeeRole> _memberRoles = new List<EmployeeRole>();
 
         #region Groups
 
-        public IEnumerable<MemberGroup> MemberGroups => _memberGroups;
+        public IEnumerable<EmployeeGroup> MemberGroups => _memberGroups;
 
-        public void AddGroup(Group group) => _memberGroups.Add(new MemberGroup(group, this));
+        public void AddGroup(Group group) => _memberGroups.Add(new EmployeeGroup(group, this));
 
         public void UpdateGroup(IEnumerable<Group> groups)
         {
@@ -41,9 +41,9 @@ namespace Dotnet.Portal.Domain.Models
                 }
             }
 
-            List<MemberGroup> groupsRemoved = new List<MemberGroup>();
+            List<EmployeeGroup> groupsRemoved = new List<EmployeeGroup>();
 
-            foreach (MemberGroup item in _memberGroups)
+            foreach (EmployeeGroup item in _memberGroups)
             {
                 if (!groups.Any(g => g.Id == item.GroupId))
                 {
@@ -51,7 +51,7 @@ namespace Dotnet.Portal.Domain.Models
                 }
             }
 
-            foreach (MemberGroup item in groupsRemoved)
+            foreach (EmployeeGroup item in groupsRemoved)
             {
                 _memberGroups.Remove(item);
             }
@@ -61,9 +61,9 @@ namespace Dotnet.Portal.Domain.Models
 
         #region Roles
 
-        public IEnumerable<MemberRole> MemberRoles => _memberRoles;
+        public IEnumerable<EmployeeRole> MemberRoles => _memberRoles;
 
-        public void AddRole(Role role) => _memberRoles.Add(new MemberRole(role, this));
+        public void AddRole(Role role) => _memberRoles.Add(new EmployeeRole(role, this));
 
         public void UpdateRole(IEnumerable<Role> roles)
         {
@@ -75,9 +75,9 @@ namespace Dotnet.Portal.Domain.Models
                 }
             }
 
-            List<MemberRole> rolesRemoved = new List<MemberRole>();
+            List<EmployeeRole> rolesRemoved = new List<EmployeeRole>();
 
-            foreach (MemberRole item in _memberRoles)
+            foreach (EmployeeRole item in _memberRoles)
             {
                 if (!roles.Any(g => g.Id == item.RoleId))
                 {
@@ -85,7 +85,7 @@ namespace Dotnet.Portal.Domain.Models
                 }
             }
 
-            foreach (MemberRole item in rolesRemoved)
+            foreach (EmployeeRole item in rolesRemoved)
             {
                 _memberRoles.Remove(item);
             }

@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Dotnet.Portal.Data.Repository
 {
-    public class MemberRepository : Repository<Member>, IMemberRepository
+    public class MemberRepository : Repository<Employee>, IMemberRepository
     {
         public MemberRepository(DotnetPortalDB context) : base(context) { }
 
-        public async Task<Member> GetMember(Guid id)
+        public async Task<Employee> GetMember(Guid id)
         {
             return await Db.Members.AsNoTracking()
                 .Include("MemberGroups.Group")
@@ -21,7 +21,7 @@ namespace Dotnet.Portal.Data.Repository
                 .FirstOrDefaultAsync(m => m.Id == id);
         }
 
-        public List<Member> GetMembers()
+        public List<Employee> GetMembers()
         {
             return Db.Members.ToList();
         }

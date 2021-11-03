@@ -49,7 +49,7 @@ namespace Dotnet.Portal.App
 
             services.AddScoped<DotnetPortalDB>();
             services.AddScoped<IMemberRepository, MemberRepository>();
-            services.AddScoped<IDonationRepository, DonationRepository>();
+            services.AddScoped<IPaymentRepository, PaymentRepository>();
             services.AddScoped<IGroupRepository, GroupRepository>();
             services.AddScoped<IRoleRepository, RoleRepository>();
         }
