@@ -8,7 +8,7 @@ namespace Dotnet.Portal.App.AutoMapper
     {
         public AutoMapperConfig()
         {
-            CreateMap<Employee, MemberViewModel>().ReverseMap();
+            CreateMap<Employee, EmployeeViewModel>().ReverseMap();
             CreateMap<Payment, PaymentViewModel>().ReverseMap();
             CreateMap<Group, GroupViewModel>().ReverseMap();
             CreateMap<Role, RoleViewModel>().ReverseMap();

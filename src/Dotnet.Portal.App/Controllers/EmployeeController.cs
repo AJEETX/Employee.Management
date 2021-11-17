@@ -27,21 +27,21 @@ namespace Dotnet.Portal.App.Controllers
             _groupRepository = groupRepository;
             _roleRepository = roleRepository;
             _mapper = mapper;
-            MemberVM = new MemberViewModel();
+            MemberVM = new EmployeeViewModel();
         }
 
         [BindProperty]
-        public MemberViewModel MemberVM { get; set; }
+        public EmployeeViewModel MemberVM { get; set; }
 
         [BindProperty]
-        public List<MemberViewModel> Members { get; set; }
+        public List<EmployeeViewModel> Members { get; set; }
 
         // GET: Members
         public async Task<IActionResult> Index()
         {
             //Members = await _memberRepository.GetEntities().Select(member => new MemberViewModel(member)).ToList();
 
-            return View(_mapper.Map<IEnumerable<MemberViewModel>>(await _memberRepository.GetEntities()));
+            return View(_mapper.Map<IEnumerable<EmployeeViewModel>>(await _memberRepository.GetEntities()));
         }
 
         // GET: Member/Details/5
@@ -52,7 +52,7 @@ namespace Dotnet.Portal.App.Controllers
             if (member == null)
                 return NotFound();
 
-            MemberVM = new MemberViewModel(member);
+            MemberVM = new EmployeeViewModel(member);
             return View(MemberVM);
         }
 
@@ -66,7 +66,7 @@ namespace Dotnet.Portal.App.Controllers
         // POST: Member/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(MemberViewModel memberViewModel)
+        public async Task<IActionResult> Create(EmployeeViewModel memberViewModel)
         {
             if (!ModelState.IsValid)
                 return View(memberViewModel);
@@ -119,7 +119,7 @@ namespace Dotnet.Portal.App.Controllers
             if (member == null)
                 return NotFound();
 
-            MemberVM = new MemberViewModel(member);
+            MemberVM = new EmployeeViewModel(member);
             InitializeMember();
             return View(MemberVM);
         }
@@ -127,7 +127,7 @@ namespace Dotnet.Portal.App.Controllers
         // POST: Member/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, MemberViewModel memberViewModel)
+        public async Task<IActionResult> Edit(Guid id, EmployeeViewModel memberViewModel)
         {
             if (id != memberViewModel.Id)
                 return NotFound();
@@ -183,7 +183,7 @@ namespace Dotnet.Portal.App.Controllers
             if (member == null)
                 return NotFound();
 
-            MemberVM = new MemberViewModel(member);
+            MemberVM = new EmployeeViewModel(member);
             return View(MemberVM);
         }
 
@@ -206,7 +206,7 @@ namespace Dotnet.Portal.App.Controllers
             catch (Exception ex)
             {
                 ModelState.AddModelError(string.Empty, ex.Message);
-                MemberVM = new MemberViewModel(member);
+                MemberVM = new EmployeeViewModel(member);
                 return View(MemberVM);
             }
         }

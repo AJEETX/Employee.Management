@@ -8,11 +8,11 @@ using System.Linq;
 
 namespace Dotnet.Portal.App.ViewsModels
 {
-    public class MemberViewModel
+    public class EmployeeViewModel
     {
-        public MemberViewModel() { }
+        public EmployeeViewModel() { }
 
-        public MemberViewModel(Employee member)
+        public EmployeeViewModel(Employee member)
         {
             Id = member.Id;
             Name = member.Name;
@@ -30,17 +30,17 @@ namespace Dotnet.Portal.App.ViewsModels
             RegistrationDate = member.RegistrationDate;
             GroupsIds = member.MemberGroups.Select(g => g.Group.Id).ToArray();
             RolesIds = member.MemberRoles.Select(r => r.Role.Id).ToArray();
-            MemberGroups = new List<MemberGroupViewModel>();
-            MemberRoles = new List<MemberRoleViewModel>();
+            MemberGroups = new List<EmployeeGroupViewModel>();
+            MemberRoles = new List<EmployeeRoleViewModel>();
 
             foreach (var item in member.MemberGroups)
             {
-                MemberGroups.Add(new MemberGroupViewModel(item));
+                MemberGroups.Add(new EmployeeGroupViewModel(item));
             }
 
             foreach (var item in member.MemberRoles)
             {
-                MemberRoles.Add(new MemberRoleViewModel(item));
+                MemberRoles.Add(new EmployeeRoleViewModel(item));
             }
         }
 
@@ -113,7 +113,7 @@ namespace Dotnet.Portal.App.ViewsModels
 
         public IEnumerable<SelectListItem> Groups { get; set; }
 
-        public List<MemberGroupViewModel> MemberGroups { get; set; }
+        public List<EmployeeGroupViewModel> MemberGroups { get; set; }
 
         #endregion
 
@@ -127,7 +127,7 @@ namespace Dotnet.Portal.App.ViewsModels
 
         public RoleViewModel Role { get; set; }
 
-        public List<MemberRoleViewModel> MemberRoles { get; set; }
+        public List<EmployeeRoleViewModel> MemberRoles { get; set; }
 
         public IEnumerable<SelectListItem> Roles { get; set; }
 

@@ -3,11 +3,11 @@ using System;
 
 namespace Dotnet.Portal.App.ViewsModels
 {
-    public class MemberGroupViewModel
+    public class EmployeeGroupViewModel
     {
-        public MemberGroupViewModel() { }
+        public EmployeeGroupViewModel() { }
 
-        public MemberGroupViewModel(EmployeeGroup memberGroup)
+        public EmployeeGroupViewModel(EmployeeGroup memberGroup)
         {
             Id = memberGroup.Id;
             MemberId = memberGroup.MemberId;

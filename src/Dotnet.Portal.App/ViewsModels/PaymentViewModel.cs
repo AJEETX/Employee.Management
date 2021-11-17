@@ -17,7 +17,7 @@ namespace Dotnet.Portal.App.ViewsModels
             Amount = payment.Amount;
             PaymentType = (PaymentTypeViewModel)payment.Type;
             MemberId = payment.MemberId;
-            Member = new MemberViewModel(payment.Member);
+            Member = new EmployeeViewModel(payment.Member);
         }
 
         [Key]
@@ -45,7 +45,7 @@ namespace Dotnet.Portal.App.ViewsModels
         [Required(ErrorMessage = "The {0} field is required.")]
         public Guid MemberId { get; set; }
 
-        public MemberViewModel Member { get; set; }
+        public EmployeeViewModel Member { get; set; }
         
         //public IEnumerable<MemberViewModel> Members { get; set; }
 

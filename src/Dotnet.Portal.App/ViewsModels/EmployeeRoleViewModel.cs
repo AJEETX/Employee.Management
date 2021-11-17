@@ -3,11 +3,11 @@ using System;
 
 namespace Dotnet.Portal.App.ViewsModels
 {
-    public class MemberRoleViewModel
+    public class EmployeeRoleViewModel
     {
-        public MemberRoleViewModel() { }
+        public EmployeeRoleViewModel() { }
 
-        public MemberRoleViewModel(EmployeeRole memberRole)
+        public EmployeeRoleViewModel(EmployeeRole memberRole)
         {
             Id = memberRole.Id;
             MemberId = memberRole.MemberId;
